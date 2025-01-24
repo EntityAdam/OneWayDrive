@@ -43,3 +43,22 @@ Logging in C# and .NET -> https://learn.microsoft.com/en-us/dotnet/core/extensio
 Feel free to use Azurite Storage Emulator -> https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite?tabs=visual-studio%2Cblob-storage
 
 Or you can use a real Azure Storage Account
+
+# To start or debug this application you will need:
+
+1. One of the following options for uploading files  
+	1. Actual Storage Account provisioned on Azure  
+	2. Azurite Storage Emulator  
+	3. Rancher Desktop installed on your machine to run the Azureite Storage Emulator container  
+2. The user secret named "StorageConnection" for the Storage Account connneciton string  
+	1. For emulators: use the value "UseDevelopmentStorage=true"  
+	2. For actual Storage Account, use the connection string value copied from the Azure Portal  
+
+```cs
+# Use the following command in your terminal to set the user secret
+# this command needs to be run in the same directory as the OneWayDrive.csproj file.
+dotnet user-secrets set StorageConnection "UseDevelopmentStorage=true"
+```
+
+
+
